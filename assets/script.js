@@ -43,7 +43,7 @@ $("ul").on("click", "button", function ()
     })
 
 function getCoordinates () {
-var requestUrl = "http://api.openweathermap.org/geo/1.0/direct?q="+ cityName + "&appid=0ecf829d1f1196a32f84e1c28d293d91";
+var requestUrl = "https://api.openweathermap.org/geo/1.0/direct?q="+ cityName + "&appid=0ecf829d1f1196a32f84e1c28d293d91";
  fetch(requestUrl)
     .then(function (response) {
         return response.json();
@@ -73,7 +73,7 @@ var requestUrl = "http://api.openweathermap.org/geo/1.0/direct?q="+ cityName + "
 
 
 function getWeather (a,b) {
-var url2 ="http://api.openweathermap.org/data/2.5/forecast?lat=" + a + "&lon=" + b + "&appid=0ecf829d1f1196a32f84e1c28d293d91&units=imperial";
+var url2 ="https://api.openweathermap.org/data/2.5/forecast?lat=" + a + "&lon=" + b + "&appid=0ecf829d1f1196a32f84e1c28d293d91&units=imperial";
 console.log(url2);
     fetch(url2)
      .then(function (response) {
