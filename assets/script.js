@@ -6,11 +6,11 @@ var lon = "";
 var cityName = 'Waynesboro';
 //cityName = localStorage.getItem("cityname");
 
-var todayEl = document.getElementById('todayBox');
-var day2El = document.getElementById('day2');
-var day3El = document.getElementById('day3');
-var day4El = document.getElementById('day4');
-var day5El = document.getElementById('day5');
+var todayEl = $('#todayBox');
+var day2El = $('#day2');
+var day3El = $('#day3');
+var day4El = $('#day4');
+var day5El = $('#day5');
 
 
 function searchButton() {
@@ -84,7 +84,7 @@ console.log(url2);
         console.log("weather forecast");
         console.log(data);
         // **** ADD CITY HERE ****
-        var listCity = document.createElement('h2');
+        var listCity = $('<h2>');
         listCity.textContent = data.city.name;
         todayEl.appendChild(listCity);
         
@@ -101,21 +101,21 @@ console.log(url2);
         // why is this undefined???
         console.log(realDate);
         console.log(dateA); 
-        var listDateA = document.createElement('p');
+        var listDateA = $('<p>');
         listDateA.textContent = dateA;
         todayEl.appendChild(listDateA);
 
         console.log(weatherListA); 
         console.log("The temp is " + weatherTempA + " F");
-        var listTempA = document.createElement('p');
+        var listTempA = $('<p>');
         listTempA.textContent = ("The temp is " + weatherTempA + " F");
         todayEl.appendChild(listTempA);
         console.log("The humidity is " + humidityA);
-        var listHumidityA = document.createElement('p');
+        var listHumidityA = $('<p>');
         listHumidityA.textContent = ("The humidity is " + humidityA + "%");
         todayEl.appendChild(listHumidityA);
         console.log("The wind speed is " + windA);
-        var listWindA = document.createElement('p');
+        var listWindA = $('<p>');
         listWindA.textContent = ("The wind speed is " + windA + " mph");
         todayEl.appendChild(listWindA);
 
@@ -131,25 +131,25 @@ console.log(url2);
 
         
         console.log(dateB);
-        var listDateB = document.createElement('p');
+        var listDateB = $('<p>');
         listDateB.textContent = dateB;
         day2El.appendChild(listDateB); 
         console.log(weatherListB); 
 
-        var listTempB = document.createElement('p');
+        var listTempB = $('<p>');
         listTempB.textContent = ("The temp is " + weatherTempB + " F");
         day2El.appendChild(listTempB);
         console.log("The temp is " + weatherTempB+ " F");
 
-        var listHumidityB = document.createElement('p');
+        var listHumidityB = $('<p>');
         listHumidityB.textContent = ("The humidity is " + humidityB + "%");
         day2El.appendChild(listHumidityB);
         console.log("The humidity is " + humidityB + "%");
-        var listWindB = document.createElement('p');
+        var listWindB = $('<p>');
         listWindB.textContent = ("The wind speed is " + windB + " mph");
         day2El.appendChild(listWindB);
         console.log("The wind speed is " + windB + " mph");
-        var listIconB = document.createElement('img');
+        var listIconB = $('<img>');
         var iconUrlB = "https://openweathermap.org/img/wn/" + iconB + "@2x.png"
         listIconB.setAttribute('src', iconUrlB );
         day2El.appendChild(listIconB);
@@ -163,7 +163,7 @@ console.log(url2);
         var iconC = data.list[16].weather[0].icon;
         var windC = data.list[16].wind.speed;
         
-        var listDateC = document.createElement('p');
+        var listDateC = $('<p>');
         listDateC.textContent = dateC;
         day3El.appendChild(listDateC);
         console.log(dateC); 
