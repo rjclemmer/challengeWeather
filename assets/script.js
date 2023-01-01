@@ -5,7 +5,10 @@ const API_KEY = '0ecf829d1f1196a32f84e1c28d293d91';
 
 var lat = "";
 var lon = "";
-var cityName = 'Staunton';
+var cityName = ' ';
+if (cityName === " ") {
+    cityName = localStorage.getItem("CityName");
+}
 //cityName = localStorage.getItem("cityname");
 
 var todayEl = document.getElementById('todayBox');
