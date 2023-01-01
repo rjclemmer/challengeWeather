@@ -86,9 +86,9 @@ console.log(url2);
         console.log("weather forecast");
         console.log(data);
         // **** ADD CITY HERE ****
-        var listCity = document.createElement('h2');
-        listCity.textContent = data.city.name;
-        todayEl.appendChild(listCity);
+        /*var listCity = $('<h2>');
+        listCity.innerHTML = data.city.name;
+        todayEl.appendChild(listCity);*/
         
         // Info for Today's Forecast
         var weatherListA = data.list[0].main;
