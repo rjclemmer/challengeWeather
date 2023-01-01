@@ -5,7 +5,7 @@ const API_KEY = '0ecf829d1f1196a32f84e1c28d293d91';
 
 var lat = "";
 var lon = "";
-var cityName = 'Waynesboro';
+var cityName = 'Staunton';
 //cityName = localStorage.getItem("cityname");
 
 var todayEl = document.getElementById('todayBox');
