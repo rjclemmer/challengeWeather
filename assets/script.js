@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
 const API_KEY = '0ecf829d1f1196a32f84e1c28d293d91';
 
@@ -6,11 +8,11 @@ var lon = "";
 var cityName = 'Waynesboro';
 //cityName = localStorage.getItem("cityname");
 
-var todayEl = $('#todayBox');
-var day2El = $('#day2');
-var day3El = $('#day3');
-var day4El = $('#day4');
-var day5El = $('#day5');
+var todayEl = document.getElementById('todayBox');
+var day2El = document.getElementById('day2');
+var day3El = document.getElementById('day3');
+var day4El = document.getElementById('day4');
+var day5El = document.getElementById('day5');
 
 
 function searchButton() {
@@ -43,7 +45,7 @@ $("ul").on("click", "button", function ()
     })
 
 function getCoordinates () {
-var requestUrl = "https://api.openweathermap.org/geo/1.0/direct?q="+ cityName + "&appid=0ecf829d1f1196a32f84e1c28d293d91";
+var requestUrl = "http://api.openweathermap.org/geo/1.0/direct?q="+ cityName + "&appid=0ecf829d1f1196a32f84e1c28d293d91";
  fetch(requestUrl)
     .then(function (response) {
         return response.json();
@@ -73,7 +75,7 @@ var requestUrl = "https://api.openweathermap.org/geo/1.0/direct?q="+ cityName + 
 
 
 function getWeather (a,b) {
-var url2 ="https://api.openweathermap.org/data/2.5/forecast?lat=" + a + "&lon=" + b + "&appid=0ecf829d1f1196a32f84e1c28d293d91&units=imperial";
+var url2 ="http://api.openweathermap.org/data/2.5/forecast?lat=" + a + "&lon=" + b + "&appid=0ecf829d1f1196a32f84e1c28d293d91&units=imperial";
 console.log(url2);
     fetch(url2)
      .then(function (response) {
@@ -84,7 +86,7 @@ console.log(url2);
         console.log("weather forecast");
         console.log(data);
         // **** ADD CITY HERE ****
-        var listCity = $('<h2>');
+        var listCity = document.createElement('h2');
         listCity.textContent = data.city.name;
         todayEl.appendChild(listCity);
         
@@ -101,21 +103,21 @@ console.log(url2);
         // why is this undefined???
         console.log(realDate);
         console.log(dateA); 
-        var listDateA = $('<p>');
+        var listDateA = document.createElement('p');
         listDateA.textContent = dateA;
         todayEl.appendChild(listDateA);
 
         console.log(weatherListA); 
         console.log("The temp is " + weatherTempA + " F");
-        var listTempA = $('<p>');
+        var listTempA = document.createElement('p');
         listTempA.textContent = ("The temp is " + weatherTempA + " F");
         todayEl.appendChild(listTempA);
         console.log("The humidity is " + humidityA);
-        var listHumidityA = $('<p>');
+        var listHumidityA = document.createElement('p');
         listHumidityA.textContent = ("The humidity is " + humidityA + "%");
         todayEl.appendChild(listHumidityA);
         console.log("The wind speed is " + windA);
-        var listWindA = $('<p>');
+        var listWindA = document.createElement('p');
         listWindA.textContent = ("The wind speed is " + windA + " mph");
         todayEl.appendChild(listWindA);
 
@@ -131,25 +133,25 @@ console.log(url2);
 
         
         console.log(dateB);
-        var listDateB = $('<p>');
+        var listDateB = document.createElement('p');
         listDateB.textContent = dateB;
         day2El.appendChild(listDateB); 
         console.log(weatherListB); 
 
-        var listTempB = $('<p>');
+        var listTempB = document.createElement('p');
         listTempB.textContent = ("The temp is " + weatherTempB + " F");
         day2El.appendChild(listTempB);
         console.log("The temp is " + weatherTempB+ " F");
 
-        var listHumidityB = $('<p>');
+        var listHumidityB = document.createElement('p');
         listHumidityB.textContent = ("The humidity is " + humidityB + "%");
         day2El.appendChild(listHumidityB);
         console.log("The humidity is " + humidityB + "%");
-        var listWindB = $('<p>');
+        var listWindB = document.createElement('p');
         listWindB.textContent = ("The wind speed is " + windB + " mph");
         day2El.appendChild(listWindB);
         console.log("The wind speed is " + windB + " mph");
-        var listIconB = $('<img>');
+        var listIconB = document.createElement('img');
         var iconUrlB = "https://openweathermap.org/img/wn/" + iconB + "@2x.png"
         listIconB.setAttribute('src', iconUrlB );
         day2El.appendChild(listIconB);
@@ -163,7 +165,7 @@ console.log(url2);
         var iconC = data.list[16].weather[0].icon;
         var windC = data.list[16].wind.speed;
         
-        var listDateC = $('<p>');
+        var listDateC = document.createElement('p');
         listDateC.textContent = dateC;
         day3El.appendChild(listDateC);
         console.log(dateC); 
