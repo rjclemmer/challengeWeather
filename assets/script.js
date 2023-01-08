@@ -23,11 +23,12 @@ var day4El = document.getElementById('day4');
 var day5El = document.getElementById('day5');
 var day6El = document.getElementById('day6');
 
-
+// search button
 function searchButton() {
     cityName = $("input").val().trim();
     localStorage.setItem('CityName', cityName);
-    //
+
+//creates a button that will load results from previous search
     var cityList = $("<button>");
         cityList.addClass("list-group-item list-group-item-action");
         cityList.text(cityName);
@@ -59,6 +60,13 @@ function getCoordinates () {
 var requestUrl = "https://api.openweathermap.org/geo/1.0/direct?q="+ cityName + "&appid=0ecf829d1f1196a32f84e1c28d293d91";
  fetch(requestUrl)
     .then(function (response) {
+        console.log(response.status);
+      //  Conditional for bad request
+    //   if (response.status !== 200) {
+    //     // alert if not a valid city
+    //    alert("Please enter a valid city");
+    //    return false;
+    //   }
         return response.json();
     })
     .then(function (data) {
