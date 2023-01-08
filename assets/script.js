@@ -27,6 +27,7 @@ var day6El = document.getElementById('day6');
 function searchButton() {
     cityName = $("input").val().trim();
     localStorage.setItem('CityName', cityName);
+    //
     var cityList = $("<button>");
         cityList.addClass("list-group-item list-group-item-action");
         cityList.text(cityName);
@@ -49,6 +50,7 @@ $("ul").on("click", "button", function ()
     {
         cityName = $(this).text();
         console.log(cityName);
+        
 
         getCoordinates();
     })
@@ -75,14 +77,16 @@ var requestUrl = "https://api.openweathermap.org/geo/1.0/direct?q="+ cityName + 
             var repoList = data[i]}
         console.log('Weather \n----------');
         console.log(repoList);
+
+        //gets lat and long coord from repoList and is used in getWeather function
+
         lat = repoList.lat;
         lon = repoList.lon;
         console.log(lat);
         console.log(lon);
         
-        // **** ADD CITY and STATE HERE ****
+        // **** ADDs CITY and STATE HERE ****
         var listCity = repoList.name;
-        
         var listState = repoList.state;
         
         var cityHeader = document.createElement('h2');
@@ -116,6 +120,7 @@ console.log(url2);
         // displays the date from unix time
         var dateA = moment.unix(data.list[0].dt).format("dddd MM/DD/YYYY");
         var windA = data.list[0].wind.speed;
+        var iconA = data.list[0].weather[0].icon;
 
         // why is this undefined???
         console.log(realDate);
@@ -123,6 +128,12 @@ console.log(url2);
         var listDateA = document.createElement('p');
         listDateA.textContent = dateA;
         todayEl.appendChild(listDateA);
+
+        var listIconA = document.createElement('img');
+        var iconUrlA = "https://openweathermap.org/img/wn/" + iconA + "@2x.png"
+        listIconA.setAttribute('src', iconUrlA );
+        todayEl.appendChild(listIconA);
+        console.log(iconA);
 
         console.log(weatherListA); 
         console.log("The temp is " + weatherTempA + " F");
