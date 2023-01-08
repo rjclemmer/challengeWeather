@@ -9,6 +9,10 @@ Aside from formatting and local storage issues, I had an issue with my API key. 
 ## Link to site
 
 
+## Screenshot
+
+<img src="./assets/screenshot.png" alt="Photo of WeatherApp" title="Photo of WeatherApp">
+
 
 ## User Story
 
