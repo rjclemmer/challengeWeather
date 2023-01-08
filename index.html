@@ -14,9 +14,10 @@
     <h1>WEATHER FORECAST</h1>
   </header>
   <body>
-    <div class="container">
     <div class="row">
-    <div id="searchBox" class="'col-3 float-left">
+    <aside class="col-4 container">
+    <div >
+    <div id="searchBox" class="float-left">
     <h4>Enter a City Name:</h4>
     <form id="city-form">
         <input>
@@ -26,18 +27,20 @@
    </div>
    
    </div>
-   </div>
-
-   <div id="todayBox" class="bg-primary text-light col-6 float-right"></div>
+  </aside>
+   <div class="col-8">
+   <section id="todayBox" class="bg-primary text-light  float-right"></section>
   
-    <div id="forecastBox" class="card-group">
+    <section id="forecastBox" class="card-group">
      
       <div id="day2" class="bg-primary text-light col-2 card"></div>
       <div id="day3" class="bg-primary text-light col-2 card"></div>
       <div id="day4" class="bg-primary text-light col-2 card"></div>
       <div id="day5" class="bg-primary text-light col-2 card"></div>
       <div id="day6" class="bg-primary text-light col-2 card"></div>
-    </div>
+    </section>
+  </div> 
+  </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/script.js"></script>

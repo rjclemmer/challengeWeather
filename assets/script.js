@@ -158,7 +158,6 @@ console.log(url2);
         var dateB = moment.unix(data.list[8].dt).format("dddd MM/DD/YYYY");
         var iconB = data.list[8].weather[0].icon;
         var windB = data.list[8].wind.speed;
-
         
         console.log(dateB);
         var listDateB = document.createElement('p');
@@ -175,10 +174,12 @@ console.log(url2);
         listHumidityB.textContent = ("The humidity is " + humidityB + "%");
         day2El.appendChild(listHumidityB);
         console.log("The humidity is " + humidityB + "%");
+
         var listWindB = document.createElement('p');
         listWindB.textContent = ("The wind speed is " + windB + " mph");
         day2El.appendChild(listWindB);
         console.log("The wind speed is " + windB + " mph");
+
         var listIconB = document.createElement('img');
         var iconUrlB = "https://openweathermap.org/img/wn/" + iconB + "@2x.png"
         listIconB.setAttribute('src', iconUrlB );
@@ -213,6 +214,7 @@ console.log(url2);
         listWindC.textContent = ("The wind speed is " + windC + " mph");
         day3El.appendChild(listWindC);
         console.log("The wind speed is " + windC);
+
         var listIconC = document.createElement('img');
         var iconUrlC = "https://openweathermap.org/img/wn/" + iconC + "@2x.png"
         listIconC.setAttribute('src', iconUrlC );
@@ -232,18 +234,22 @@ console.log(url2);
         day4El.appendChild(listDateD);
         console.log(dateD); 
         console.log(weatherListD); 
+
         var listTempD = document.createElement('p');
         listTempD.textContent = ("The temp is " + weatherTempD + " F");
         day4El.appendChild(listTempD);
         console.log("the temp is " + weatherTempD+ " F");
+
         var listHumidityD = document.createElement('p');
         listHumidityD.textContent = ("The humidity is " + humidityD + "%");
         day4El.appendChild(listHumidityD);
         console.log("the humidity is " + humidityD);
+
         var listWindD = document.createElement('p');
         listWindD.textContent = ("The wind speed is " + windD + " mph");
         console.log("the wind speed is " + windD);
         day4El.appendChild(listWindD)
+
         var listIconD = document.createElement('img');
         var iconUrlD = "https://openweathermap.org/img/wn/" + iconD + "@2x.png"
         listIconD.setAttribute('src', iconUrlD );
@@ -274,6 +280,7 @@ console.log(url2);
         var listWindE = document.createElement('p');
         listWindE.textContent = ("The wind speed is " + windE + " mph");
         day5El.appendChild(listWindE);
+
         var listIconE = document.createElement('img');
         var iconUrlE = "https://openweathermap.org/img/wn/" + iconE + "@2x.png"
         listIconE.setAttribute('src', iconUrlE );
@@ -303,6 +310,7 @@ console.log(url2);
          var listWindF = document.createElement('p');
          listWindF.textContent = ("The wind speed is " + windF + " mph");
          day6El.appendChild(listWindF);
+
          var listIconF = document.createElement('img');
          var iconUrlF = "https://openweathermap.org/img/wn/" + iconF + "@2x.png"
          listIconF.setAttribute('src', iconUrlF );
