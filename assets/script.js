@@ -8,6 +8,9 @@ var lon = "";
 var cityName = ' ';
 if (cityName === " ") {
     cityName = localStorage.getItem("CityName");
+    if (cityName == null) {
+        cityName = "Richmond"
+    }
 }
 //cityName = localStorage.getItem("cityname");
 
