@@ -79,6 +79,16 @@ var requestUrl = "https://api.openweathermap.org/geo/1.0/direct?q="+ cityName + 
         lon = repoList.lon;
         console.log(lat);
         console.log(lon);
+        
+        // **** ADD CITY and STATE HERE ****
+        var listCity = repoList.name;
+        
+        var listState = repoList.state;
+        
+        var cityHeader = document.createElement('h2');
+        cityHeader.textContent = listCity + ", " + listState;
+        todayEl.appendChild(cityHeader);
+
         getWeather(lat, lon);
     })};
 
@@ -95,10 +105,7 @@ console.log(url2);
        
         console.log("weather forecast");
         console.log(data);
-        // **** ADD CITY HERE ****
-        var listCity = document.createElement('h2');
-        listCity.textContent = data.city.name;
-        todayEl.appendChild(listCity);
+       
         
         // Info for Today's Forecast
         var weatherListA = data.list[0].main;
