@@ -8,6 +8,7 @@ Aside from formatting and local storage issues, I had an issue with my API key. 
 
 ## Link to site
 
+https://rjclemmer.github.io/rjc-WeatherApp/
 
 ## Screenshot
 
