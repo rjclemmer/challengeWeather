@@ -6,10 +6,12 @@ const API_KEY = '0ecf829d1f1196a32f84e1c28d293d91';
 var lat = "";
 var lon = "";
 var cityName = ' ';
+
+// sets default to from localStorage. If localStorage is null, default to Staunton, VA
 if (cityName === " ") {
     cityName = localStorage.getItem("CityName");
     if (cityName == null) {
-        cityName = "Richmond"
+        cityName = "Staunton";
     }
 }
 //cityName = localStorage.getItem("cityname");
@@ -19,6 +21,7 @@ var day2El = document.getElementById('day2');
 var day3El = document.getElementById('day3');
 var day4El = document.getElementById('day4');
 var day5El = document.getElementById('day5');
+var day6El = document.getElementById('day6');
 
 
 function searchButton() {
@@ -64,6 +67,7 @@ var requestUrl = "https://api.openweathermap.org/geo/1.0/direct?q="+ cityName + 
         $('#day3').empty();
         $('#day4').empty();
         $('#day5').empty();
+        $('#day6').empty();
         
         //
         
@@ -256,7 +260,37 @@ console.log(url2);
         var iconUrlE = "https://openweathermap.org/img/wn/" + iconE + "@2x.png"
         listIconE.setAttribute('src', iconUrlE );
         day5El.appendChild(listIconE);
+
+         // day 6
+
+         var weatherListF = data.list[39].main;
+         var weatherTempF = weatherListF.temp;
+         var humidityF = weatherListB.humidity;
+         var dateF = moment.unix(data.list[39].dt).format("dddd MM/DD/YYYY");
+         var iconF = data.list[39].weather[0].icon;
+         var windF = data.list[39].wind.speed;
+ 
+         var listDateF = document.createElement('p');
+         listDateF.textContent = dateF;
+         day6El.appendChild(listDateF);
+          
+         var listTempF = document.createElement('p');
+         listTempF.textContent = ("The temp is " + weatherTempF + " F");
+         day6El.appendChild(listTempF);
+       
+         var listHumidityF = document.createElement('p');
+         listHumidityF.textContent = ("The humidity is " + humidityF + "%");
+         day6El.appendChild(listHumidityF);
         
+         var listWindF = document.createElement('p');
+         listWindF.textContent = ("The wind speed is " + windF + " mph");
+         day6El.appendChild(listWindF);
+         var listIconF = document.createElement('img');
+         var iconUrlF = "https://openweathermap.org/img/wn/" + iconF + "@2x.png"
+         listIconF.setAttribute('src', iconUrlF );
+         day6El.appendChild(listIconF);
+        
+         console.log("the wind speed is " + windF);
 
         
     })};
