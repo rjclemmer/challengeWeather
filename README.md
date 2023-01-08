@@ -1,4 +1,4 @@
-# 06 Server-Side APIs: Weather Dashboard
+# RJC Weather App
 
 ## Your Task
 I was tasked with utilizing the the 5 Day Weather Forecast to retrieve weather data for cities.
@@ -8,7 +8,7 @@ Aside from formatting and local storage issues, I had an issue with my API key. 
 
 ## Link to site
 
-https://rjclemmer.github.io/challengeWeather/
+
 
 ## User Story
 
