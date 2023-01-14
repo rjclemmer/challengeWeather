@@ -11,7 +11,7 @@ var cityName = ' ';
 if (cityName === " ") {
     cityName = localStorage.getItem("CityName");
     if (cityName == null) {
-        cityName = "Staunton";
+        cityName = " ";
     }
 }
 //cityName = localStorage.getItem("cityname");
@@ -42,7 +42,7 @@ function searchButton() {
     
 // activates searchbutton function
 $("#city-form").submit(function (event)
-    {
+    {   
         event.preventDefault();
         searchButton();
     })
@@ -62,13 +62,13 @@ var requestUrl = "https://api.openweathermap.org/geo/1.0/direct?q="+ cityName + 
     .then(function (response) {
         console.log(response.status);
       //  Conditional for bad request
-    //   if (response.status !== 200) {
-    //     // alert if not a valid city
-    //    alert("Please enter a valid city");
-    //    return false;
-    //   }
-        return response.json();
-    })
+      if (response.status !== 200) {
+        // alert if not a valid city
+       alert("Please enter a valid city");
+       return false;
+      } 
+        return response.json();}
+    )
     .then(function (data) {
 
         // this clears out previous searches
@@ -329,7 +329,7 @@ console.log(url2);
         
     })};
 
-getCoordinates()
+// getCoordinates()
 
 
 
